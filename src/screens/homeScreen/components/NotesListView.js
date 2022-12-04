@@ -3,7 +3,6 @@ import { getData } from '../../../../asyncStorage/read'
 export function NotesListView({ notes, navigation  }) {
 
     const handleTitlePress = async (item) => {
-        console.log("we are init? ", await getData());
         navigation.navigate("NotesScreen", { selectedNote: item });
     }
 

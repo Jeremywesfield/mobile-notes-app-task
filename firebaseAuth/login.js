@@ -2,11 +2,12 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore/lite';
 import { saveData } from "../asyncStorage/write";
+import { apiKey, authDomain } from '@env'
 
 export function login(email, password, appContext) {
   const firebaseConfig = {
-    apiKey: "AIzaSyBHbP4YBQOSv5-EneRK7cm5IFIzAsy22KU",
-    authDomain: "mobile-notes-app.firebaseapp.com",
+    apiKey: apiKey,
+    authDomain: authDomain,
     projectId: "mobile-notes-app",
     storageBucket: "mobile-notes-app.appspot.com",
     messagingSenderId: "173645962920",

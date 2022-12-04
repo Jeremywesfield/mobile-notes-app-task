@@ -1,16 +1,16 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore/lite';
-import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { saveData } from '../asyncStorage/write';
+import { apiKey, authDomain } from '@env'
 
 export function userSignUp({ newUser, appContext }) {
 
-    const { userName, email, password } = newUser || {};
+  const { userName, email, password } = newUser || {};
   
-  // TODO: Replace the following with your app's Firebase project configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBHbP4YBQOSv5-EneRK7cm5IFIzAsy22KU",
-    authDomain: "mobile-notes-app.firebaseapp.com",
+    apiKey: apiKey,
+    authDomain: authDomain,
     projectId: "mobile-notes-app",
     storageBucket: "mobile-notes-app.appspot.com",
     messagingSenderId: "173645962920",
@@ -36,7 +36,6 @@ export function userSignUp({ newUser, appContext }) {
           
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
       alert("Error signing up, please try again!")
     });

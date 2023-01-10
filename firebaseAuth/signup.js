@@ -31,6 +31,7 @@ export function userSignUp({ newUser, appContext }) {
             saveData({ userName, isLoggedIn: true }, true)
             appContext.setUser(userName)
           }).catch((error) => {
+            appContext.setUser(userName);
             return 'error'
           });
           

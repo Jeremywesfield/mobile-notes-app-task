@@ -30,7 +30,8 @@ export function LandingScreen({ navigation, route }) {
 
     return (
         <View>
-            {screenToShow}
+            {/* {screenToShow} */}
+            <HomeScreen navigation={navigation} route={route} />
         </View>
     );
 }

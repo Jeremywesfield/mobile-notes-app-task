@@ -87,5 +87,6 @@ const styles = StyleSheet.create({
         height: 400,
         width: '90%',
         textAlign: 'left',
-        flexWrap: 'wrap'    }
+        flexWrap: 'wrap'
+    }
 });

@@ -39,6 +39,7 @@ export function NotesScreen({ route, navigation }) {
             appContext.notes.forEach((note, index) => {
                 if(note.id === selectedNote.id) {
                     notesArr.splice(index, 1);
+                    saveData(notesArr)
                     appContext.setNotes(notesArr)
                 }
             })

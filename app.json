@@ -5,7 +5,13 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "326a94fb-bd79-4201-b5c6-e878df21057d"
+      }
+    },
+    "owner": "jwest54"
   },
   "name": "notes-app"
 }

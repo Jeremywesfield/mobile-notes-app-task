@@ -5,6 +5,7 @@ import AppContext from "../../context/context";
 import { NotesMapView } from "./components/NotesMapView";
 import LinearGradient from 'react-native-linear-gradient';
 import { getData as getDataFromStorage } from "../../../asyncStorage/read";
+import { saveData } from "../../../asyncStorage/write";
 
 export function HomeScreen({ navigation }) {
     const [isListView, setIsListView] = useState(true);
@@ -15,6 +16,10 @@ export function HomeScreen({ navigation }) {
         });
     }, []);
    
+    const handleDelete = () => {
+        saveData([]);
+        appContext.setUser(false);
+    }
 
     const notesArr = [...appContext.notes].sort((item) => item.date);
     const notesViewToDisplay = isListView ?  
@@ -44,7 +49,7 @@ export function HomeScreen({ navigation }) {
                         </View> 
                         : newNoteBtn}
                         {notesArr.Length ? <Button title={'Clear All Notes'} onPress={()=> appContext.setNotes([])} /> : null}
-                    <Button style={styles.logoutBtn} title={'Logout'} onPress={() => appContext.setUser(false)} />
+                    <Button style={styles.logoutBtn} title={'Logout'} onPress={handleDelete} />
                 </View>
             </LinearGradient>
         </View>
